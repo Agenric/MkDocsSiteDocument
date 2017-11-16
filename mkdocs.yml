@@ -1,0 +1,4 @@
+site_name: MkDocs Site
+pages:
+- Home: 'index.md'
+- About: 'about.md'
