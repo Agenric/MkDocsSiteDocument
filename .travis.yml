@@ -12,6 +12,7 @@ script:
   - mkdocs help
 
 after_script: # 推送到github的部分
+  - cp CNAME site/CNAME
   - cd site
   - git init
   - git config user.name "Travis-CI"
