@@ -6,12 +6,9 @@ install:
   - pip install mkdocs
 
 script:
-  - python --version
-  - pip --version
   - mkdocs build
-  - mkdocs help
 
-after_script: # 推送到github的部分
+after_script:
   - cp CNAME site/CNAME
   - cd site
   - git init
@@ -19,8 +16,8 @@ after_script: # 推送到github的部分
   - git config user.email "agenricwon@gmail.com"
   - git add .
   - git commit -m "Update docs"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
+  - git push "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
 
-env: # 环境变量
+env:
  global:
    - GITHUB_REF: github.com/Agenric/MkDocsSite.git
