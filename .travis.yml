@@ -6,6 +6,8 @@ install:
   - pip install mkdocs
 
 script:
+  - python --version
+  - pip --version
   - mkdocs build
   - mkdocs help
 
