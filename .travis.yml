@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.7"
+
+install:
+  - pip install mkdocs
+
+script:
+  - mkdocs build
+
+after_script: # 推送到github的部分
+  - cd site
+  - git init
+  - git config user.name "Travis-CI"
+  - git config user.email "agenricwon@gmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
