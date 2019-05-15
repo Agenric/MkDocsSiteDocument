@@ -11,9 +11,9 @@ script:
 after_script:
   - cp CNAME site/CNAME
   - cd site
+  - git config --global user.name "Travis-CI"
+  - git config --global user.email "AgenricWon@gmail.com"
   - git init
-  - git config user.name "Travis-CI"
-  - git config user.email "agenricwon@gmail.com"
   - git add .
   - git commit -m "Update docs"
   - git push "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master --force
